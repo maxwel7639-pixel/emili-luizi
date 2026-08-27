@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
   atualizar();
 })();
 
-// Header transparente sobre o hero, solido depois que rola.
+// Header: vidro escuro sobre o hero, vidro claro depois que rola.
 (function () {
   var header = document.querySelector('.header');
   if (!header) return;
@@ -52,4 +52,28 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('scroll', atualizar, { passive: true });
   atualizar();
+})();
+
+// Menu mobile: abre/fecha o painel de navegacao.
+(function () {
+  var botao = document.getElementById('botao-menu');
+  var menu = document.getElementById('menu-nav');
+  if (!botao || !menu) return;
+
+  function fechar() {
+    menu.classList.remove('aberto');
+    botao.setAttribute('aria-expanded', 'false');
+  }
+  function alternar() {
+    var aberto = menu.classList.toggle('aberto');
+    botao.setAttribute('aria-expanded', String(aberto));
+  }
+
+  botao.addEventListener('click', alternar);
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', fechar);
+  });
+  document.addEventListener('keydown', function (evento) {
+    if (evento.key === 'Escape') fechar();
+  });
 })();
