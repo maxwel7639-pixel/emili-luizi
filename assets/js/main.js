@@ -42,3 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', atualizar);
   atualizar();
 })();
+
+// Header transparente sobre o hero, solido depois que rola.
+(function () {
+  var header = document.querySelector('.header');
+  if (!header) return;
+  function atualizar() {
+    header.classList.toggle('header-solido', window.scrollY > 40);
+  }
+  document.addEventListener('scroll', atualizar, { passive: true });
+  atualizar();
+})();

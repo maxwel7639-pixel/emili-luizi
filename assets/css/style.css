@@ -75,13 +75,21 @@ button, a{cursor:pointer}
 .kicker::before{ content:''; width:22px; height:2px; background:var(--terracota); }
 
 /* ---------- Header ---------- */
+/* Comeca transparente sobre o hero escuro; ganha fundo solido depois que rola
+   (classe .header-solido, ligada por JS em main.js). */
 .header{
-  position:sticky; top:0; z-index:40;
-  background:rgba(250,247,241,.9);
+  position:fixed; top:0; left:0; right:0; z-index:40;
+  background:transparent;
+  color:var(--bege-100);
+  transition:background .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.header.header-solido{
+  background:rgba(250,247,241,.92);
   backdrop-filter:blur(8px);
   -webkit-backdrop-filter:blur(8px);
+  color:var(--tinta);
+  box-shadow:0 1px 0 rgba(28,26,23,.08);
 }
-.header.no-fundo{ background:transparent; }
 .header .wrap{
   display:flex; align-items:center; justify-content:space-between;
   padding-block:var(--s-3);
@@ -100,6 +108,7 @@ button, a{cursor:pointer}
   font-size:.88rem; font-weight:600; text-decoration:none;
   transition:background .2s ease;
   min-height:44px;
+  box-shadow:0 2px 10px -4px rgba(13,12,10,.4);
 }
 .nav-cta:hover{ background:var(--terracota-700); }
 .nav-cta svg{width:18px;height:18px;flex:none}
