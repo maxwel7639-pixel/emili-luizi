@@ -1,0 +1,3 @@
+node_modules/
+ferramentas/shot*.mjs
+ferramentas/*.png
