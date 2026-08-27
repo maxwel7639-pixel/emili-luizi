@@ -51,6 +51,16 @@ mostra a tela em branco nesse meio-tempo, mesmo com layout correto. Ou seja, tes
 lógica de verdade, mas não vi a animação rodar com os próprios olhos — vale seu retest
 visual direto no navegador antes de aprovar.
 
+## Imagem de compartilhamento (og:image)
+
+`assets/img/og.jpg`/`.webp` não vem do `build_imagens.py` — é um card com o nome e o
+slogan por cima da foto (pra quem recebe o link no WhatsApp já reconhecer a marca antes
+de clicar). Pra gerar de novo: `ferramentas/og-card.html` é a peça (HTML+CSS isolado,
+mesma paleta/tipografia do site), renderizada em PNG via `ferramentas/render-og.mjs`
+(node, precisa de `npm install ws` antes — não fica no repo) e depois convertida com
+`Image.open(...).save('assets/img/og.jpg')`. Editar o texto/posição é editar o HTML e
+rodar de novo.
+
 ## Estrutura das 9 seções
 
 Hero (foto+slogan) → Selos → Sobre (+ selo do estúdio meia.) → 5 Tipos de ensaio (card com

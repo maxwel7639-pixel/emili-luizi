@@ -66,7 +66,8 @@ if __name__ == "__main__":
     for origem, saida, foco_y in galeria:
         preparar(origem, saida, 800, 1000, foco=(0.5, foco_y))
 
-    # ---- OG ----
-    preparar("cachorro_closeup.png", "og", 1200, 630, foco=(0.5, 0.32))
+    # OG: NAO gerado aqui -- e um card com nome/slogan por cima da foto,
+    # renderizado a partir de ferramentas/og-card.html (ver render-og.mjs
+    # ou o proprio README para o passo a passo de regerar).
 
     print("done")

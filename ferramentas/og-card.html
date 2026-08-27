@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Archivo:wght@400;500&display=swap">
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ width:1200px; height:630px; overflow:hidden; }
+  body{
+    font-family:'Archivo', sans-serif;
+    background:#0D0C0A;
+    position:relative;
+  }
+  .foto{
+    position:absolute; top:0; left:0; width:660px; height:630px;
+    object-fit:cover; object-position:60% 25%;
+    filter:brightness(.92);
+  }
+  .veu{
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(13,12,10,0) 40%, rgba(13,12,10,.55) 58%, #0D0C0A 74%);
+  }
+  .conteudo{
+    position:absolute; right:64px; top:0; bottom:0; width:480px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .kicker{
+    display:flex; align-items:center; gap:12px;
+    color:#D68A4E; font-size:19px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .kicker::before{ content:''; width:34px; height:3px; background:#D68A4E; display:block; }
+  h1{
+    font-family:'Space Grotesk', sans-serif; font-weight:700;
+    font-size:76px; line-height:1; color:#FAF7F1; letter-spacing:-.01em;
+    margin-bottom:26px;
+  }
+  p{
+    font-family:'Space Grotesk', sans-serif; font-style:italic; font-weight:500;
+    font-size:29px; line-height:1.35; color:#ECE3D3; max-width:420px;
+  }
+</style>
+</head>
+<body>
+  <img class="foto" src="../assets/originais/fotos_emili_luizi/cachorro_closeup.png" alt="">
+  <div class="veu"></div>
+  <div class="conteudo">
+    <span class="kicker">Fotografia Pet</span>
+    <h1>Emili Luizi</h1>
+    <p>"Fotografia pra quando o agora virar saudade."</p>
+  </div>
+</body>
+</html>
