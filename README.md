@@ -32,6 +32,25 @@ nitidez/cor — sem tratamento artificial, sem fabricar imagem).
 pessoais dela e do espaço físico do estúdio, não usados pra não sobrecarregar a seção Sobre
 (o briefing pedia especificamente retrato com o cachorro + colagem da janela).
 
+## Hero com efeito de abertura no scroll
+
+Inspirado no site do Misturini: duas fotos (cachorro em estúdio + mulher correndo com
+cachorro) ficam encostadas nas bordas laterais e se afastam conforme rola a página,
+"abrindo" espaço — o cartão central (retrato pessoal dela + o slogan) e os botões ficam
+sempre visíveis por cima, fixos, enquanto as fotos se movem por trás. Implementado com
+`position: sticky` + JS lendo a posição de scroll (`assets/js/main.js`), sem lib externa.
+Em mobile a animação é desativada (só a foto da esquerda aparece, estática) e em
+`prefers-reduced-motion` também não anima — ambos por CSS/JS puro.
+
+⚠️ **Verificado só por inspeção do DOM (`getBoundingClientRect` +
+`elementFromPoint`), não por print de tela**: o ambiente onde montei o site tem um bug
+de renderização no Chrome headless especificamente com `position: sticky` durante scroll
+programático — a página confirma estar no lugar certo (hit-test bate exatamente no
+elemento esperado a cada posição de scroll testada), mas o screenshot automatizado
+mostra a tela em branco nesse meio-tempo, mesmo com layout correto. Ou seja, testei a
+lógica de verdade, mas não vi a animação rodar com os próprios olhos — vale seu retest
+visual direto no navegador antes de aprovar.
+
 ## Estrutura das 9 seções
 
 Hero (foto+slogan) → Selos → Sobre (+ selo do estúdio meia.) → 5 Tipos de ensaio (card com

@@ -33,8 +33,9 @@ def preparar(nome_origem, saida, largura, altura, foco=(0.5, 0.32), qualidade=88
 
 
 if __name__ == "__main__":
-    # ---- HERO ----
-    preparar("cachorro_closeup.png", "hero", 1400, 1750, foco=(0.5, 0.28))
+    # ---- HERO (split, duas imagens) ----
+    preparar("cachorro_closeup.png", "hero-esquerda", 1100, 1750, foco=(0.55, 0.28))
+    preparar("mulher_correndo_cachorro.png", "hero-direita", 1100, 1750, foco=(0.5, 0.35))
 
     # ---- SOBRE ----
     preparar("portrait_com_cachorro.png", "sobre-principal", 900, 1050, foco=(0.5, 0.25))
